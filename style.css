@@ -12,8 +12,8 @@
 
 @font-face { font-family: "Young Serif"; src: url("fonts/YoungSerif-Regular.ttf"); font-display: swap; }
 @font-face { font-family: "Instrument Serif"; font-style: italic; src: url("fonts/InstrumentSerif-Italic.ttf"); font-display: swap; }
-@font-face { font-family: "Instrument Sans"; src: url("fonts/InstrumentSans-Regular.ttf"); font-display: swap; }
-@font-face { font-family: "Instrument Sans"; font-weight: 700; src: url("fonts/InstrumentSans-Bold.ttf"); font-display: swap; }
+@font-face { font-family: "Instrument Sans"; font-weight: 400; font-style: normal; src: url("fonts/InstrumentSans-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Instrument Sans"; font-weight: 700; font-style: normal; src: url("fonts/InstrumentSans-Bold.ttf") format("truetype"); font-display: swap; }
 @font-face { font-family: "Geist Mono"; src: url("fonts/GeistMono-Regular.ttf"); font-display: swap; }
 
 * { box-sizing: border-box; }
