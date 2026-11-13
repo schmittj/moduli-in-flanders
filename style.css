@@ -1,0 +1,114 @@
+/* Moduli in Flanders: blue-and-white tile theme, with one dark band for the star chart.
+   Colours are defined once here; change them in :root to restyle the whole page. */
+:root {
+  --glaze: #f6f3ea;
+  --blue: #12296b;
+  --mid: #5f7fc4;
+  --line: #c9cfdf;
+  --night: #0b1126;
+  --gold: #d8b56a;
+  --pale: #ece6d6;
+}
+
+@font-face { font-family: "Young Serif"; src: url("fonts/YoungSerif-Regular.ttf"); font-display: swap; }
+@font-face { font-family: "Instrument Serif"; font-style: italic; src: url("fonts/InstrumentSerif-Italic.ttf"); font-display: swap; }
+@font-face { font-family: "Instrument Sans"; src: url("fonts/InstrumentSans-Regular.ttf"); font-display: swap; }
+@font-face { font-family: "Instrument Sans"; font-weight: 700; src: url("fonts/InstrumentSans-Bold.ttf"); font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("fonts/GeistMono-Regular.ttf"); font-display: swap; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--glaze);
+  color: var(--blue);
+  font: 18px/1.55 "Instrument Sans", system-ui, sans-serif;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.mono { font: 13px/1.4 "Geist Mono", ui-monospace, monospace; letter-spacing: .16em; text-transform: uppercase; }
+
+/* top bar */
+.top { border-bottom: 3px solid var(--blue); }
+.bar { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding-top: 18px; padding-bottom: 14px; }
+.bar nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.bar a { text-decoration: none; }
+.bar a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* title */
+.hero { padding-top: 34px; padding-bottom: 30px; }
+h1 {
+  font: 400 clamp(46px, 10.5vw, 118px)/.98 "Young Serif", Georgia, serif;
+  letter-spacing: -.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+.when { font: italic clamp(24px, 4vw, 40px)/1.2 "Instrument Serif", Georgia, serif; margin: 14px 0 0; }
+.tiles { width: 100%; }
+
+/* introduction */
+.intro { padding-top: 44px; padding-bottom: 12px; }
+.lead { font: italic clamp(22px, 3.2vw, 34px)/1.2 "Instrument Serif", Georgia, serif; margin: 0; }
+.name { font: 400 clamp(36px, 7.4vw, 84px)/1.05 "Young Serif", Georgia, serif; margin: 4px 0 22px; }
+.intro p:last-child { max-width: 62ch; }
+
+/* sections */
+section[id] { padding-top: 46px; scroll-margin-top: 10px; }
+h2 {
+  font: 13px/1.4 "Geist Mono", ui-monospace, monospace;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  border-top: 3px solid var(--blue);
+  padding-top: 14px;
+  margin: 0 0 20px;
+}
+h3 { font: 400 26px/1.2 "Young Serif", Georgia, serif; margin: 0 0 10px; }
+
+.speakers {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 6px 28px;
+  font-weight: 700; font-size: 21px;
+}
+
+.days { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 34px 48px; }
+table { border-collapse: collapse; width: 100%; }
+td { padding: 9px 0; border-top: 1px solid var(--line); vertical-align: top; }
+td:first-child { font: 14px/1.9 "Geist Mono", ui-monospace, monospace; color: var(--mid); white-space: nowrap; padding-right: 20px; width: 1%; }
+.break td:last-child { color: var(--mid); }
+.main td:last-child { font-weight: 700; }
+.tba { display: block; font-size: 15px; color: var(--mid); }
+
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 28px; margin: 0; }
+dt { font: 13px/2.1 "Geist Mono", ui-monospace, monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--mid); }
+dd { margin: 0; }
+
+/* the chart */
+.night { background: var(--night); color: var(--pale); margin-top: 60px; padding: 54px 0; }
+.chart { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px 48px; align-items: center; }
+.night h2 { border-color: var(--gold); color: var(--gold); }
+.night p { margin: 0 0 14px; }
+
+/* posters */
+.posters { display: flex; flex-wrap: wrap; gap: 28px; }
+.posters a { flex: 1 1 240px; max-width: 330px; text-decoration: none; }
+.posters img { border: 1px solid var(--line); margin-bottom: 10px; }
+.posters a:hover img { border-color: var(--blue); }
+
+/* sponsors: on white, as two of the logo files have a white ground */
+.sponsors { padding-top: 46px; }
+.logos {
+  background: #fff; border: 2px solid var(--blue); border-radius: 10px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: 20px 40px;
+  padding: 22px 28px;
+}
+.logos img { width: auto; }
+
+footer { margin-top: 64px; border-top: 3px solid var(--blue); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 24px; justify-content: space-between; padding-top: 16px; padding-bottom: 30px; }
+
+@media (max-width: 520px) {
+  body { font-size: 17px; }
+  dl { grid-template-columns: 1fr; gap: 0 0; }
+  dd { margin-bottom: 12px; }
+}
